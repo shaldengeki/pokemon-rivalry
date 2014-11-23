@@ -35,12 +35,18 @@ section {
   position: absolute;
   width: 100%;
 }
-section ul, section ol {
+.section-inner {
   background: rgba(0, 0, 0, 0.4);
   text-align: center;
   margin: 0 auto;
-  padding: 3px;
+  padding: 0;
   border-radius: 15px;
+}
+.section-inner ul, .section-inner ol {
+  padding: 3px;
+}
+.section-inner ol {
+  margin: 0 50px;
 }
 
 #score-box {
@@ -80,5 +86,5 @@ section ul, section ol {
   bottom: 20%;
 }
 #battles {
-  width: 50em;
+  width: 30em;
 }
