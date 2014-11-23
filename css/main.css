@@ -1,0 +1,72 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+body {
+  font: 13pt tahoma;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+  margin: 0;
+  color: white;
+}
+
+.background {
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  left: -50%;
+  background: #000;
+}
+
+.background img {
+  display: block;
+  margin: auto;
+  min-width: 50%;
+  min-height: 50%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#score-box {
+  position: absolute;
+  bottom: 40%;
+  width: 100%;
+}
+
+#scores {
+  background: rgba(0, 0, 0, 0.4);
+  text-align: center;
+  width: 25%;
+  margin: 0 auto;
+  padding: 3px;
+  border-radius: 15px;
+}
+
+.score {
+  width: 100px;
+  display: inline-block;
+  position: relative;
+  font-size: 4em;
+}
+.score:first-child {
+  border-right: 1px solid white;
+}
+.score:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1em;
+  text-align: center;
+  font-size: small;
+}
+#shal:after {
+  content: "shaldengeki";  
+}
+#seraph:after {
+  content: "seraphzero";
+}
