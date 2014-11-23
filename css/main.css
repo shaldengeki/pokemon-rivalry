@@ -60,6 +60,7 @@ section {
   width: 6em;
   display: inline-block;
   position: relative;
+  cursor: pointer;
 }
 .player:first-child {
   border-right: 1px solid white;
@@ -71,7 +72,6 @@ section {
 
 .score {
   font-size: 4em;
-  cursor: pointer;
 }
 #shal .score:hover {
   color: #80E7E3;

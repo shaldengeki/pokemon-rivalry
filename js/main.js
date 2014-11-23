@@ -39,15 +39,12 @@ $(document).ready(function() {
       $(this).css("color", "white");
     });
 
-    var scoreElt = $('<div></div>').attr('class', 'score').text(player.wins);
-    var nameElt = $('<div></div>').attr('class', 'name').text(player.name);
-
     // assemble list of battles that this player has won.
-    $(scoreElt).click(function() {
+    $(playerElt).click(function() {
       $('#battle-box').hide();
       $('#battles ol').empty();
-      // get the player name from this element's parent's ID.
-      var player = $(this).parent().attr('id');
+      // get the player name from this element's ID.
+      var player = $(this).attr('id');
 
       // append battles to list.
       $(battles).filter(function(index, battle) {
@@ -61,6 +58,9 @@ $(document).ready(function() {
         $('#battle-box').show();
       }
     });
+
+    var scoreElt = $('<div></div>').attr('class', 'score').text(player.wins);
+    var nameElt = $('<div></div>').attr('class', 'name').text(player.name);
 
     playerElt.append(scoreElt);
     playerElt.append(nameElt);
