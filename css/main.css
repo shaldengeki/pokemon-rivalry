@@ -73,12 +73,6 @@ section {
 .score {
   font-size: 4em;
 }
-#shal .score:hover {
-  color: #80E7E3;
-}
-#seraph .score:hover {
-  color: #E14546;
-}
 
 #battle-box {
   font-size: 1em;
