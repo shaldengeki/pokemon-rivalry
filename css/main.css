@@ -31,42 +31,57 @@ body {
   bottom: 0;
 }
 
-#score-box {
+section {
   position: absolute;
-  bottom: 45%;
   width: 100%;
 }
 
+#score-box {
+  bottom: 45%;
+}
 #scores {
   background: rgba(0, 0, 0, 0.4);
   text-align: center;
-  width: 25%;
+  width: 15em;
   margin: 0 auto;
-  padding: 3px 3px 15px 3px;
+  padding: 3px;
   border-radius: 15px;
 }
 
-.score {
-  width: 100px;
+.player {
+  width: 6em;
   display: inline-block;
   position: relative;
-  font-size: 4em;
 }
-.score:first-child {
+.player:first-child {
   border-right: 1px solid white;
 }
-.score:after {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 0.5em;
+.name {
   text-align: center;
-  font-size: small;
+  font-size: 0.8em;
 }
-#shal:after {
-  content: "shaldengeki";  
+
+.score {
+  font-size: 4em;
+  cursor: pointer;
 }
-#seraph:after {
-  content: "seraphzero";
+#shal .score:hover {
+  color: #80E7E3;
+}
+#seraph .score:hover {
+  color: #E14546;
+}
+
+#battle-box {
+  font-size: 1em;
+  display: none;
+  bottom: 20%;
+}
+#battles {
+  background: rgba(0, 0, 0, 0.4);
+  text-align: center;
+  width: 50em;
+  margin: 0 auto;
+  padding: 3px;
+  border-radius: 15px;
 }
