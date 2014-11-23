@@ -35,17 +35,19 @@ section {
   position: absolute;
   width: 100%;
 }
+section ul, section ol {
+  background: rgba(0, 0, 0, 0.4);
+  text-align: center;
+  margin: 0 auto;
+  padding: 3px;
+  border-radius: 15px;
+}
 
 #score-box {
   bottom: 45%;
 }
 #scores {
-  background: rgba(0, 0, 0, 0.4);
-  text-align: center;
   width: 15em;
-  margin: 0 auto;
-  padding: 3px;
-  border-radius: 15px;
 }
 
 .player {
@@ -78,10 +80,5 @@ section {
   bottom: 20%;
 }
 #battles {
-  background: rgba(0, 0, 0, 0.4);
-  text-align: center;
   width: 50em;
-  margin: 0 auto;
-  padding: 3px;
-  border-radius: 15px;
 }
