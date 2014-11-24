@@ -11,7 +11,7 @@ function showBattles(battles, player) {
     });
 
     if ($('#battles ol').children().length > 0) {
-      $('#battles').fadeIn();
+      $('#battles').fadeIn(200);
     }
   });
 }
@@ -70,7 +70,7 @@ $(document).ready(function() {
       $('#scores ul').append(playerElt);
       // remove loading dialog and fade in the scores.
       $('#loading').fadeOut(200, function() {
-        scoresElt.fadeIn();
+        scoresElt.fadeIn(200);
       });
     });
   }).fail(function() {
@@ -81,7 +81,8 @@ $(document).ready(function() {
     var errorElt = $('<section></section>').attr('id', 'error');
     errorElt.append(innerError).hide();
     $('body').append(errorElt);
-    $('#loading').fadeOut();
-    errorElt.fadeIn();
+    $('#loading').fadeOut(200, function() {
+      errorElt.fadeIn(200);
+    });
   });
 });
