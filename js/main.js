@@ -1,18 +1,19 @@
 function showBattles(battles, player) {
-  $('#battle-box').hide();
-  $('#battles ol').empty();
+  $('#battles').fadeOut(400, function() {
+    $('#battles ol').empty();
 
-  // append battles to list.
-  $(battles).filter(function(index, battle) {
-    return battle.winner === player;
-  }).each(function(index, battle) {
-    var battleElt = $('<li></li>').text(battle.date + ": " + battle.location);
-    $('#battles ol').append(battleElt);
+    // append battles to list.
+    $(battles).filter(function(index, battle) {
+      return battle.winner === player;
+    }).each(function(index, battle) {
+      var battleElt = $('<li></li>').text(battle.date + ": " + battle.location);
+      $('#battles ol').append(battleElt);
+    });
+
+    if ($('#battles ol').children().length > 0) {
+      $('#battles').fadeIn();
+    }
   });
-
-  if ($('#battles ol').children().length > 0) {
-    $('#battle-box').show();
-  }
 }
 
 $(document).ready(function() {
@@ -35,17 +36,17 @@ $(document).ready(function() {
     $('#loading').fadeOut();
 
     // create basic structure of the page.
-    var scoreBoxElt = $('<section></section>').attr('id', 'score-box');
-    var scoresElt = $('<div></div>').attr('id', 'scores').attr('class', 'section-inner');
-    scoresElt.append($('<ul></ul>'));
-    scoreBoxElt.append(scoresElt).hide();
-    $('body').append(scoreBoxElt);
+    var contentBoxElt = $('<section></section>').attr('id', 'content-box');
 
-    var battleBoxElt = $('<section></section>').attr('id', 'battle-box');
+    var scoresElt = $('<div></div>').attr('id', 'scores').attr('class', 'section-inner');
+    scoresElt.append($('<ul></ul>')).hide();
+    contentBoxElt.append(scoresElt);
+
     var battlesElt = $('<div></div>').attr('id', 'battles').attr('class', 'section-inner');
     battlesElt.append($('<ol></ol>'));
-    battleBoxElt.append(battlesElt);
-    $('body').append(battleBoxElt);
+    contentBoxElt.append(battlesElt);
+
+    $('body').append(contentBoxElt);
 
     // generate score list in dom.
     $(players).each(function(name, player) {
@@ -70,7 +71,7 @@ $(document).ready(function() {
 
       playerElt.append(scoreElt).append(nameElt);
       $('#scores ul').append(playerElt);
-      scoreBoxElt.fadeIn();
+      scoresElt.fadeIn();
     });
   }).fail(function() {
     // one or more of the calls failed.

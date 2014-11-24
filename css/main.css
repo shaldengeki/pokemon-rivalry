@@ -65,10 +65,11 @@ section {
   padding: 3px;
 }
 
-/* Scorebox styles */
-#score-box {
+#content-box {
   bottom: 45%;
 }
+
+/* Scorebox styles */
 #scores {
   width: 15em;
 }
@@ -92,11 +93,8 @@ section {
 }
 
 /* Battlebox styles */
-#battle-box {
+#battles {
   font-size: 1em;
   display: none;
-  bottom: 20%;
-}
-#battles {
   width: 30em;
 }
