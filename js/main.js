@@ -31,6 +31,22 @@ $(document).ready(function() {
       })[0].wins++;
     });
 
+    // remove loading dialog.
+    $('#loading').fadeOut();
+
+    // create basic structure of the page.
+    var scoreBoxElt = $('<section></section>').attr('id', 'score-box');
+    var scoresElt = $('<div></div>').attr('id', 'scores').attr('class', 'section-inner');
+    scoresElt.append($('<ul></ul>'));
+    scoreBoxElt.append(scoresElt).hide();
+    $('body').append(scoreBoxElt);
+
+    var battleBoxElt = $('<section></section>').attr('id', 'battle-box');
+    var battlesElt = $('<div></div>').attr('id', 'battles').attr('class', 'section-inner');
+    battlesElt.append($('<ol></ol>'));
+    battleBoxElt.append(battlesElt);
+    $('body').append(battleBoxElt);
+
     // generate score list in dom.
     $(players).each(function(name, player) {
       var playerElt = $('<li></li>').attr('class', 'player').attr('id', player.name);
@@ -51,22 +67,6 @@ $(document).ready(function() {
 
       var scoreElt = $('<div></div>').attr('class', 'score').text(player.wins);
       var nameElt = $('<div></div>').attr('class', 'name').text(player.name);
-
-      // remove loading dialog.
-      $('#loading').fadeOut();
-
-      // create basic structure of the page.
-      var scoreBoxElt = $('<section></section>').attr('id', 'score-box');
-      var scoresElt = $('<div></div>').attr('id', 'scores').attr('class', 'section-inner');
-      scoresElt.append($('<ul></ul>'));
-      scoreBoxElt.append(scoresElt).hide();
-      $('body').append(scoreBoxElt);
-
-      var battleBoxElt = $('<section></section>').attr('id', 'battle-box');
-      var battlesElt = $('<div></div>').attr('id', 'battles').attr('class', 'section-inner');
-      battlesElt.append($('<ol></ol>'));
-      battleBoxElt.append(battlesElt);
-      $('body').append(battleBoxElt);
 
       playerElt.append(scoreElt).append(nameElt);
       $('#scores ul').append(playerElt);
