@@ -72,7 +72,7 @@ $(document).ready(function() {
       $('#scores ul').append(playerElt);
       scoreBoxElt.fadeIn();
     });
-  }, function() {
+  }).fail(function() {
     // one or more of the calls failed.
     var innerError = $('<div></div>').attr('class', 'section-inner');
     innerError.append($('<h1></h1>').text('Oh no!'));
