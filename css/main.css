@@ -43,6 +43,29 @@ section {
   margin: 0 50px;
 }
 
+/* Loading dialog styles */
+#loading {
+  bottom: 45%;
+}
+#loading div {
+  width: 15em;
+}
+#loading h1 {
+  padding: 3px;
+}
+
+/* Error dialog styles */
+#error {
+  bottom: 45%;
+}
+#error div {
+  width: 30em;
+}
+#error h1 {
+  padding: 3px;
+}
+
+/* Scorebox styles */
 #score-box {
   bottom: 45%;
 }
@@ -68,6 +91,7 @@ section {
   font-size: 4em;
 }
 
+/* Battlebox styles */
 #battle-box {
   font-size: 1em;
   display: none;
