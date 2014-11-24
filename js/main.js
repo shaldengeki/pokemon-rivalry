@@ -1,5 +1,5 @@
 function showBattles(battles, player) {
-  $('#battles').fadeOut(400, function() {
+  $('#battles').fadeOut(200, function() {
     $('#battles ol').empty();
 
     // append battles to list.
@@ -31,9 +31,6 @@ $(document).ready(function() {
         return player.name === battle.winner;
       })[0].wins++;
     });
-
-    // remove loading dialog.
-    $('#loading').fadeOut();
 
     // create basic structure of the page.
     var contentBoxElt = $('<section></section>').attr('id', 'content-box');
@@ -71,7 +68,10 @@ $(document).ready(function() {
 
       playerElt.append(scoreElt).append(nameElt);
       $('#scores ul').append(playerElt);
-      scoresElt.fadeIn();
+      // remove loading dialog and fade in the scores.
+      $('#loading').fadeOut(200, function() {
+        scoresElt.fadeIn();
+      });
     });
   }).fail(function() {
     // one or more of the calls failed.
